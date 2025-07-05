@@ -1,0 +1,196 @@
+/* Reset and Base */
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Layout */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2b5090;
+  width: 100%;
+  height: 3rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  font-size: 1.25rem;
+  box-sizing: border-box;
+}
+
+.navbar a {
+  color: #dcdfe6;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  border-radius: 2rem;
+  box-shadow: 0 0 5px #dcdfe6;
+  padding: 6px;
+}
+
+.favouriteList {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Banner */
+.banner__section img,
+.banner__2 img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Product Sections */
+.arrive__section,
+.discount__section {
+  display: grid;
+  gap: 2rem;
+  padding: 0 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  box-sizing: border-box;
+}
+
+.arrive__section > div,
+.discount__section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrive__section img,
+.discount__section img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 1px 4px rgba(222, 222, 230, 0.8);
+}
+
+.footer__section img {
+  width: 100%;
+  display: block;
+}
+
+.description {
+  width: 100%;
+  max-width: 250px;
+  padding: 0.5rem 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 15px;
+  margin: 0.5rem 0;
+}
+
+/* Button */
+button {
+  background-color: white;
+  border: 2px solid rgb(202, 62, 62);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Rating Stars */
+.rating-stars {
+  display: inline-flex;
+  gap: 2px;
+  margin-left: 5px;
+}
+
+.rating-stars i {
+  font-size: 18px;
+  color: #ffd700;
+  cursor: pointer;
+}
+
+/* Wishlist Heart Icon */
+.item {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: red;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.ri-heart-3-fill {
+  color: red;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.searchBarParentDiv {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    padding:8px;
+}
+.inputfield {
+    
+    width: 30rem;
+    outline: none;
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 1.25rem;
+    border: 0px;
+}
+
+.searchIcon {
+    position: absolute;
+    right: -3px;
+    top: 10px;
+}
+
+.searchIcon:hover {
+    cursor: pointer;
+}
+.searchBar{
+    width: 32%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    width:100%;
+    height:20px;
+    border-radius:25px;
+}

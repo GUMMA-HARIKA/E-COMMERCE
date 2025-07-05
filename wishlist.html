@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wishlist</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+    .wishlist-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .wishlist-item {
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .wishlist-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .wishlist-item h3 {
+      font-size: 1.1rem;
+      margin: 10px 0 5px;
+    }
+    .wishlist-item p {
+      font-size: 0.9rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Your Wishlist</h2>
+  <div class="wishlist-container" id="wishlistContainer"></div>
+
+  <script>
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const container = document.getElementById("wishlistContainer");
+
+    if (wishlist.length === 0) {
+      container.innerHTML = "<p>No items in wishlist.</p>";
+    } else {
+     
+      const productData = {
+        laptop01: {
+          name: "ZenithBook X1 Carbon (13th Gen)",
+          desc: "Ultra-light | i7 | 16GB RAM | 1TB SSD",
+          img: "assets/Categories/laptop.jpg",
+          price: "₹38,990"
+        },
+       
+      };
+
+      wishlist.forEach(id => {
+        const product = productData[id];
+        if (product) {
+          container.innerHTML += `
+            <div class="wishlist-item">
+              <img src="${product.img}" alt="${product.name}" />
+              <h3>${product.name}</h3>
+              <p>${product.desc}</p>
+              <p><strong>${product.price}</strong></p>
+            </div>
+          `;
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

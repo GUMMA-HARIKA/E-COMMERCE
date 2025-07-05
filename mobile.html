@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobile - Product Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+    .product-container {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+    .product-container img {
+      width: 300px;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .product-details {
+      max-width: 500px;
+    }
+    .product-details h1 {
+      margin: 0;
+    }
+    .stars i {
+      color: gold;
+    }
+    button {
+      padding: 10px 20px;
+      margin-right: 1rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .add {
+      background-color: rgb(18, 122, 235);
+      color: white;
+    }
+    .continue {
+      background-color: rgb(43, 197, 115);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="product-container">
+    <img src="./assets/Categories/phone.png" alt="iPhone" />
+    <div class="product-details">
+      <h1>iPhone 15 Pro Max – Titanium Edition</h1>
+      <p>A17 Pro | 256GB | Super Retina XDR | Dynamic Island</p>
+      <p><strong>Price:</strong> ₹1,29,900</p>
+      <p><em>EMI: ₹5,999/month</em></p>
+      <p class="stars">
+        <strong>Rating:</strong>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-half-fill"></i>
+      </p>
+      <button class="add" onclick="addToCart()">Add to Cart</button>
+      <button class="continue" onclick="window.location.href='index.html'">Continue Shopping</button>
+    </div>
+  </div>
+
+  <script>
+    function addToCart() {
+      const product = {
+        name: "iPhone 15 Pro Max – Titanium Edition",
+        desc: "A17 Pro | 256GB | Super Retina XDR | Dynamic Island",
+        price: "₹1,29,900",
+        img: "./assets/Categories/phone.png"
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+      cart.push(product);
+      localStorage.setItem('cartItems', JSON.stringify(cart));
+      alert("Product added to cart!");
+      window.location.href = 'cart.html'; 
+    }
+  </script>
+
+</body>
+</html>
